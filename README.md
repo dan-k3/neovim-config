@@ -1,8 +1,6 @@
 # Dependencies
 
-## Windows Setup
-
-<hr>
+### Windows Setup
 
 * `sudo choco install lua-language-server`
 * `sudo choco install mingw`
