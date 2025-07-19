@@ -1,8 +1,3 @@
-vim.rocks.setup({
-  enabled   = false,
-  hererocks = false,
-})
-
 require("config.lazy")
 
 -- Core editing prefs
