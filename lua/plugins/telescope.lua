@@ -1,7 +1,8 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
+    -- Use latest commit from master branch for full action support
+    -- tag = '0.1.8',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
@@ -17,31 +18,50 @@ return {
               ["<C-p>"] = actions.toggle_selection + actions.move_selection_worse,
               ["<Tab>"] = actions.move_selection_next,
               ["<S-Tab>"] = actions.move_selection_previous,
-              -- ["<C-j>"] = actions.preview_scrolling_up,
-              -- ["<C-k>"] = actions.preview_scrolling_down,
-              -- ["<C-h>"] = actions.preview_scrolling_left,
-              -- ["<C-l>"] = actions.preview_scrolling_right,
-              -- ["<M-j>"] = actions.results_scrolling_up,
-              -- ["<M-k>"] = actions.results_scrolling_down,
-              -- ["<M-l>"] = actions.results_scrolling_right,
-              -- ["<M-h>"] = actions.results_scrolling_left
+              ["<C-j>"] = actions.preview_scrolling_up,
+              ["<C-k>"] = actions.preview_scrolling_down,
+              ["<C-h>"] = actions.preview_scrolling_left,
+              ["<C-l>"] = actions.preview_scrolling_right,
+              ["<M-j>"] = actions.results_scrolling_up,
+              ["<M-k>"] = actions.results_scrolling_down,
+              ["<M-l>"] = actions.results_scrolling_right,
+              ["<M-h>"] = actions.results_scrolling_left,
             },
             n = {
               ["<C-n>"] = actions.toggle_selection + actions.move_selection_better,
               ["<C-p>"] = actions.toggle_selection + actions.move_selection_worse,
               ["<Tab>"] = actions.move_selection_next,
               ["<S-Tab>"] = actions.move_selection_previous,
-              -- ["<C-j>"] = actions.preview_scrolling_up,
-              -- ["<C-k>"] = actions.preview_scrolling_down,
-              -- ["<C-h>"] = actions.preview_scrolling_left,
-              -- ["<C-l>"] = actions.preview_scrolling_right,
-              -- ["<M-j>"] = actions.results_scrolling_up,
-              -- ["M-k>"] = actions.results_scrolling_down,
-              -- ["<M-l>"] = actions.results_scrolling_right,
-              -- ["<M-h>"] = actions.results_scrolling_left
+              ["<C-j>"] = actions.preview_scrolling_up,
+              ["<C-k>"] = actions.preview_scrolling_down,
+              ["<C-h>"] = actions.preview_scrolling_left,
+              ["<C-l>"] = actions.preview_scrolling_right,
+              ["<M-j>"] = actions.results_scrolling_up,
+              ["<M-k>"] = actions.results_scrolling_down,
+              ["<M-l>"] = actions.results_scrolling_right,
+              ["<M-h>"] = actions.results_scrolling_left,
             }
-          }
-        }
+          },
+          -- Add tag configuration
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+          },
+          file_ignore_patterns = { "tags" },
+        },
+        -- Configure tag picker specifically
+        pickers = {
+          tags = {
+            only_sort_tags = true,
+            fname_width = 60,
+            show_line = true,
+          },
+        },
       }
 
       -- Key mappings for general Telescope functionality
@@ -57,6 +77,7 @@ return {
       vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live grep" })
       vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Find buffers" })
       vim.keymap.set("n", "<leader>fo", require("telescope.builtin").oldfiles, { desc = "Old files" })
+      vim.keymap.set("n", "<leader>fv", require("telescope.builtin").vim_options, { desc = "Vim options" })
       vim.keymap.set("n", "<leader>fc", require("telescope.builtin").commands, { desc = "Commands" })
       vim.keymap.set("n", "<leader>fl", require("telescope.builtin").loclist, { desc = "Location list" })
       vim.keymap.set("n", "<leader>fr", require("telescope.builtin").registers, { desc = "Registers" })
@@ -69,7 +90,7 @@ return {
       vim.keymap.set("n", "<leader>fM", require("telescope.builtin").man_pages, { desc = "Man pages" })
       vim.keymap.set("n", "<leader>fC", require("telescope.builtin").colorscheme, { desc = "Colorschemes" })
       vim.keymap.set("n", "<leader>fp", require("telescope.builtin").pickers, { desc = "Previous pickers" })
-      vim.keymap.set("n", "<leader>rp", require("telescope.builtin").resume, { desc = "Resume last picker" })
+      vim.keymap.set("n", "<leader>lp", require("telescope.builtin").resume, { desc = "Resume last picker" })
       vim.keymap.set("n", "<leader>fH", require("telescope.builtin").highlights, { desc = "Highlight groups" })
       vim.keymap.set("n", "<leader>fT", require("telescope.builtin").filetypes, { desc = "Filetypes" })
       vim.keymap.set("n", "<leader>fD", require("telescope.builtin").diagnostics, { desc = "Diagnostics" })
@@ -78,8 +99,8 @@ return {
       -- Git-related mappings
       vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Git files" })
       vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { desc = "Git branches" })
-      vim.keymap.set("n", "<leader>gc", require("telescope.builtin").git_commits, { desc = "Git commits" })
-      vim.keymap.set("n", "<leader>gC", require("telescope.builtin").git_bcommits, { desc = "Git buffer commits" })
+      vim.keymap.set("n", "<leader>gC", require("telescope.builtin").git_commits, { desc = "Git commits" })
+      vim.keymap.set("n", "<leader>gc", require("telescope.builtin").git_bcommits, { desc = "Git buffer commits" })
       vim.keymap.set("n", "<leader>gs", require("telescope.builtin").git_status, { desc = "Git status" })
       vim.keymap.set("n", "<leader>gS", require("telescope.builtin").git_stash, { desc = "Git stash" })
 
