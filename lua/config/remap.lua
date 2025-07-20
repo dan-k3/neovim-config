@@ -27,14 +27,33 @@ vim.keymap.set("n", "<leader>E", vim.cmd.Ex, { desc = "Open File Explorer" })
 -- Execute shell commands
 vim.keymap.set("n", "<leader>!", ":! ", { desc = "Execute Shell Command" })
 
--- Save working file
-vim.keymap.set("n", "<leader>W", ":write<CR>", { desc = "Save File" })
+-- Quick Save working file
+vim.keymap.set("n", "<leader>W", "write<CR>", { desc = "Quick Save File" })
 
--- Save to (lua) source
-vim.keymap.set("x", "<leader>S", ":lua<CR>", { desc = "Save to Source" })
+-- Save working file with confirmation
+vim.keymap.set('n', '<leader>w', function()
+  -- get full path; empty if buffer has no name
+  local path = vim.fn.expand('%:p')
+
+  if path == '' then
+    -- unnamed buffer: ask for filename
+    local name = vim.fn.input('Save as: ')
+    if name == nil or name == '' then
+      print('Save canceled')
+      return
+    end
+    vim.cmd('write ' .. vim.fn.fnameescape(name))
+  else
+    -- existing file: just write
+    vim.cmd('write')
+  end
+end, { desc = 'Save File with Confirmation' })
+
+-- Save selection to (lua) source
+vim.keymap.set("x", "<leader>S", ":lua<CR>", { desc = "Save Selection to Source" })
 
 -- Quit current buffer
-vim.keymap.set("n", "<leader>Q", ":quit<CR>", { desc = "Quit Buffer" })
+vim.keymap.set("n", "<leader>Q", ":confirm quit<CR>", { desc = "Quit Buffer" })
 
 -- Open terminal
 vim.keymap.set("n", "<leader>T", ":terminal<CR>", { desc = "Open Terminal" })

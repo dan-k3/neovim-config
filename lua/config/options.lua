@@ -3,12 +3,12 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Default shell (Windows)
 vim.opt.shell = "wsl.exe"
+--vim.opt.shell = "pwsh" -- Uncomment for PowerShell
 vim.opt.shellcmdflag = "-e bash -ic"
 vim.opt.shellredir = "2>&1 | tee"
 vim.opt.shellpipe  = "2>&1 | tee"
 vim.opt.shellquote = ""
 vim.opt.shellxquote= ""
---vim.opt.shell = "pwsh" -- Uncomment for PowerShell
 
 -- Core editing prefs
 vim.opt.number = true
