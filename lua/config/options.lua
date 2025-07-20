@@ -1,7 +1,7 @@
 -- Disable default space key behavior in normal and visual modes
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Default shell (on Windows)
+-- Default shell (Windows)
 vim.opt.shell = "wsl.exe"
 vim.opt.shellcmdflag = "-e bash -ic"
 vim.opt.shellredir = "2>&1 | tee"
@@ -20,4 +20,4 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-vim.opt.autochdir = true
+--vim.opt.autochdir = true -- Uncomment to auto-change directory

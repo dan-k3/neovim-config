@@ -45,17 +45,11 @@ return {
       }
 
       -- Key mappings for general Telescope functionality
-      vim.keymap.set("n", "<leader>en", function() require("telescope.builtin").find_files {
-          cwd = vim.fn.stdpath("config"),
-          prompt_title = "Find Neovim Config",
-        }
-      end, { desc = "Telescope find Neovim config file" })
       vim.keymap.set("n", "<leader>bb", require("telescope.builtin").builtin, { desc = "Telescope builtins" })
       vim.keymap.set("n", "<leader>tt", require("telescope.builtin").treesitter, { desc = "Telescope treesitter" })
       vim.keymap.set("n", "<leader>sh", require("telescope.builtin").search_history, { desc = "Search history" })
       vim.keymap.set("n", "<leader>rr", require("telescope.builtin").reloader, { desc = "Reload modules" })
       vim.keymap.set("n", "<leader>hh", require("telescope.builtin").help_tags, { desc = "Help tags" })
-      --vim.keymap.set("n", "<leader>sr", ":source $MYVIMRC<CR>", { desc = "Reload Lua config" })
 
       -- These mappings allow quick access to file searching, grep, buffers, help tags, etc
       vim.keymap.set("n", "<leader>F", function() require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy()) end, { desc = "Fuzzy find in buffer" })
@@ -69,15 +63,16 @@ return {
       vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "Grep string" })
       vim.keymap.set("n", "<leader>fm", require("telescope.builtin").keymaps, { desc = "Key mappings" })
       vim.keymap.set("n", "<leader>ft", require("telescope.builtin").tags, { desc = "Find tags" })
+      vim.keymap.set("n", "<leader>fn", function() require("telescope.builtin").find_files {cwd = vim.fn.stdpath("config"), prompt_title = "Find Neovim Config"} end, { desc = "Find Neovim config file" })
 
       -- Additional mappings for various Telescope functionalities
       vim.keymap.set("n", "<leader>fM", require("telescope.builtin").man_pages, { desc = "Man pages" })
       vim.keymap.set("n", "<leader>fC", require("telescope.builtin").colorscheme, { desc = "Colorschemes" })
-      vim.keymap.set("n", "<leader>fP", require("telescope.builtin").pickers, { desc = "Previous pickers" })
+      vim.keymap.set("n", "<leader>fp", require("telescope.builtin").pickers, { desc = "Previous pickers" })
+      vim.keymap.set("n", "<leader>rp", require("telescope.builtin").resume, { desc = "Resume last picker" })
       vim.keymap.set("n", "<leader>fH", require("telescope.builtin").highlights, { desc = "Highlight groups" })
-      vim.keymap.set("n", "<leader>fL", require("telescope.builtin").filetypes, { desc = "Filetypes" })
+      vim.keymap.set("n", "<leader>fT", require("telescope.builtin").filetypes, { desc = "Filetypes" })
       vim.keymap.set("n", "<leader>fD", require("telescope.builtin").diagnostics, { desc = "Diagnostics" })
-      vim.keymap.set("n", "<leader>fR", require("telescope.builtin").resume, { desc = "Resume last picker" })
       vim.keymap.set("n", "<leader>ss", function() require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown()) end, { desc = "Spell suggestions" })
 
       -- Git-related mappings

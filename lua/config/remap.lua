@@ -3,10 +3,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Manage buffers
-vim.keymap.set("n", "<leader>B", ":enew<CR>", { desc = "New Buffer" })
-vim.keymap.set("n", "<leader>BB", ":new<CR>", { desc = "New Split Buffer" })
-vim.keymap.set("n", "<leader>BO", ":b#<CR>", { desc = "Switch to Other Buffer" })
-vim.keymap.set("n", "<leader>BC", ":bd<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>bn", ":enew<CR>", { desc = "New Buffer" })
+vim.keymap.set("n", "<leader>bs", ":new<CR>", { desc = "New Split Buffer" })
+vim.keymap.set("n", "<leader>br", ":b#<CR>", { desc = "Switch to Other Buffer" })
+vim.keymap.set("n", "<leader>bc", ":bd<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>bv", ":vsplit<CR>", { desc = "Vertical Split Buffer" })
 
 -- Create and close tabs
 vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "New Tab" })
@@ -26,11 +27,23 @@ vim.keymap.set("n", "<leader>E", vim.cmd.Ex, { desc = "Open File Explorer" })
 -- Execute shell commands
 vim.keymap.set("n", "<leader>!", ":! ", { desc = "Execute Shell Command" })
 
+-- Save working file
+vim.keymap.set("n", "<leader>W", ":write<CR>", { desc = "Save File" })
+
+-- Save to (lua) source
+vim.keymap.set("x", "<leader>S", ":lua<CR>", { desc = "Save to Source" })
+
+-- Quit current buffer
+vim.keymap.set("n", "<leader>Q", ":quit<CR>", { desc = "Quit Buffer" })
+
 -- Open terminal
 vim.keymap.set("n", "<leader>T", ":terminal<CR>", { desc = "Open Terminal" })
 
+-- Open Lazy package manager
+vim.keymap.set("n", "<leader>L", ":Lazy<CR>", { desc = "Open Lazy Manager" })
+
 -- Exit terminal mode
-vim.keymap.set("t", "<M-e>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+vim.keymap.set("t", "<M-e>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
 
 -- Move selection with auto indent
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Selection Down" })
