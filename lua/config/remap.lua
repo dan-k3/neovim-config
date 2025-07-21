@@ -71,6 +71,10 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Selection Up" })
 -- Paste without losing copied buffer
 vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "Paste Without Losing Buffer" })
 
+-- Set current working directory
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", { desc = "Set CWD to Buffer's Directory" })
+vim.keymap.set("n", "<leader>lcd", ":lcd %:p:h<CR>", { desc = "Set Window-Local CWD" })
+
 -- Format with LSP
 -- vim.keymap.set("n", "<leader>f", function()
 --   vim.lsp.buf.format()
