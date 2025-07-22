@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>tm", ":tabmove ", { desc = "Move Tab to Index…" }
 vim.keymap.set("n", "<leader>E", vim.cmd.Ex, { desc = "Open File Explorer" })
 
 -- Execute shell commands
-vim.keymap.set("n", "<leader>!", ":! ", { desc = "Execute Shell Command" })
+vim.keymap.set("n", "<leader>1", ":! ", { desc = "Execute Shell Command" })
 
 -- Quick Save working file
 vim.keymap.set("n", "<leader>W", "write<CR>", { desc = "Quick Save File" })
