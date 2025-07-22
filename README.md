@@ -22,7 +22,6 @@
    VERSION=3.15.0
    curl -LO https://github.com/LuaLS/lua-language-server/releases/download/${VERSION}/lua-language-server-${VERSION}-submodules.zip
    unzip lua-language-server-${VERSION}-submodules.zip
-   cd lua-language-server-${VERSION}
  ```
 2. `mkdir -p ~/lua-language-server`
 3. `unzip -o lua-language-server-linux-submodules.zip -d ~/lua-language-server`
