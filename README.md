@@ -1,6 +1,6 @@
 # Dependencies
 
-## Windows Setup
+## Windows setup
 
 * `sudo choco install lua-language-server`
 * `sudo choco install mingw`
@@ -8,7 +8,7 @@
 * `sudo choco install fd`
 * `sudo choco install universal-ctags`
 
-## Linux Setup
+## Linux setup
 
 * `sudo apt update`
 * `sudo apt install build-essential cmake ninja-build`
@@ -16,10 +16,10 @@
 * `sudo apt install fd-find`
 * `sudo apt install universal-ctags`
 
-### Lua Language Server Setup
+### Lua Language Server setup
 1. https://luals.github.io/#install
  ```bash
-   VERSION=3.15.0
+   VERSION=latest
    curl -LO https://github.com/LuaLS/lua-language-server/releases/download/${VERSION}/lua-language-server-${VERSION}-submodules.zip
  ```
 2. `mkdir -p ~/lua-language-server`
