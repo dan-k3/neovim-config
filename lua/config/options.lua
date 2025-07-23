@@ -1,14 +1,18 @@
 -- Disable default space key behavior in normal and visual modes
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Default shell (Windows)
-vim.opt.shell = "wsl.exe"
---vim.opt.shell = "pwsh" -- Uncomment for PowerShell
-vim.opt.shellcmdflag = "-e bash -ic"
-vim.opt.shellredir = "2>&1 | tee"
-vim.opt.shellpipe  = "2>&1 | tee"
-vim.opt.shellquote = ""
-vim.opt.shellxquote= ""
+-- Conditionally set the shell based on the environment
+if vim.fn.has("win64") == 1 then
+  vim.opt.shell = "pwsh"
+  vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command"
+  vim.opt.shellquote = ""
+  vim.opt.shellxquote = ""
+  vim.opt.shellredir = "| Out-File -Encoding UTF8 %s"
+  vim.opt.shellpipe = "| Out-File -Encoding UTF8 %s"
+else
+  -- Default shell for Unix-like environments
+  vim.opt.shell = "bash"
+end
 
 -- Core editing prefs
 vim.opt.number = true
