@@ -70,6 +70,7 @@ return {
       vim.keymap.set("n", "<leader>sh", require("telescope.builtin").search_history, { desc = "Search history" })
       vim.keymap.set("n", "<leader>rr", require("telescope.builtin").reloader, { desc = "Reload modules" })
       vim.keymap.set("n", "<leader>hh", require("telescope.builtin").help_tags, { desc = "Help tags" })
+      vim.keymap.set("n", "<leader>lj", require("telescope.builtin").jumplist, { desc = "Jumplist" })
 
       -- These mappings allow quick access to file searching, grep, buffers, help tags, etc
       vim.keymap.set("n", "<leader>F", function() require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy()) end, { desc = "Fuzzy find in buffer" })
