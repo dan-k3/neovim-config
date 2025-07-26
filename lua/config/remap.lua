@@ -53,7 +53,7 @@ end, { desc = 'Save File with Confirmation' })
 vim.keymap.set("x", "<leader>S", ":lua<CR>", { desc = "Save Selection to Source" })
 
 -- Quit current buffer
-vim.keymap.set("n", "<leader>Q", ":confirm quit<CR>", { desc = "Quit Buffer" })
+vim.keymap.set("n", "<leader>q", ":confirm quit<CR>", { desc = "Quit Buffer" })
 
 -- Open terminal
 vim.keymap.set("n", "<leader>T", ":terminal<CR>", { desc = "Open Terminal" })
