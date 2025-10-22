@@ -6,7 +6,7 @@ vim.g.maplocalleader = "\\"
 vim.keymap.set("n", "<leader>bn", ":enew<CR>", { desc = "New Buffer" })
 vim.keymap.set("n", "<leader>bs", ":new<CR>", { desc = "New Split Buffer" })
 vim.keymap.set("n", "<leader>br", ":b#<CR>", { desc = "Switch to Other Buffer" })
-vim.keymap.set("n", "<leader>bc", ":bd<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>bc", ":bd!<CR>", { desc = "Close Buffer" })
 vim.keymap.set("n", "<leader>bv", ":vsplit<CR>", { desc = "Vertical Split Buffer" })
 
 -- Create and close tabs

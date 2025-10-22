@@ -70,16 +70,16 @@ return {
       vim.keymap.set("n", "<leader>sh", require("telescope.builtin").search_history, { desc = "Search history" })
       vim.keymap.set("n", "<leader>rr", require("telescope.builtin").reloader, { desc = "Reload modules" })
       vim.keymap.set("n", "<leader>hh", require("telescope.builtin").help_tags, { desc = "Help tags" })
-      vim.keymap.set("n", "<leader>lj", require("telescope.builtin").jumplist, { desc = "Jumplist" })
+      vim.keymap.set("n", "<leader>jj", require("telescope.builtin").jumplist, { desc = "Jumplist" })
 
       -- These mappings allow quick access to file searching, grep, buffers, help tags, etc
       vim.keymap.set("n", "<leader>F", function() require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy()) end, { desc = "Fuzzy find in buffer" })
       vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find files" })
       vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live grep" })
       vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Find buffers" })
-      vim.keymap.set("n", "<leader>fo", require("telescope.builtin").oldfiles, { desc = "Old files" })
+      vim.keymap.set("n", "<leader>fo", require("telescope.builtin").oldfiles, { desc = "Find old files" })
       vim.keymap.set("n", "<leader>fv", require("telescope.builtin").vim_options, { desc = "Vim options" })
-      vim.keymap.set("n", "<leader>fc", require("telescope.builtin").commands, { desc = "Commands" })
+      vim.keymap.set("n", "<leader>fc", require("telescope.builtin").commands, { desc = "Find commands" })
       vim.keymap.set("n", "<leader>fl", require("telescope.builtin").loclist, { desc = "Location list" })
       vim.keymap.set("n", "<leader>fr", require("telescope.builtin").registers, { desc = "Registers" })
       vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "Grep string" })
@@ -88,8 +88,8 @@ return {
       vim.keymap.set("n", "<leader>fn", function() require("telescope.builtin").find_files {cwd = vim.fn.stdpath("config"), prompt_title = "Find Neovim Config"} end, { desc = "Find Neovim config file" })
 
       -- Additional mappings for various Telescope functionalities
-      vim.keymap.set("n", "<leader>fM", require("telescope.builtin").man_pages, { desc = "Man pages" })
-      vim.keymap.set("n", "<leader>fC", require("telescope.builtin").colorscheme, { desc = "Colorschemes" })
+      vim.keymap.set("n", "<leader>fM", require("telescope.builtin").man_pages, { desc = "Find man pages" })
+      vim.keymap.set("n", "<leader>fC", require("telescope.builtin").colorscheme, { desc = "Find colorschemes" })
       vim.keymap.set("n", "<leader>fp", require("telescope.builtin").pickers, { desc = "Previous pickers" })
       vim.keymap.set("n", "<leader>lp", require("telescope.builtin").resume, { desc = "Resume last picker" })
       vim.keymap.set("n", "<leader>fH", require("telescope.builtin").highlights, { desc = "Highlight groups" })
