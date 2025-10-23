@@ -15,7 +15,8 @@ return {
         },
       },
       config = function()
-        local lspconfig = require("lspconfig")
+        local lspconfig = require("lspconfig") --deprecated
+        --local lspconfig = vim.lsp.config["*"]
 
         -- Lua
         -- Required: https://luals.github.io/#neovim-install

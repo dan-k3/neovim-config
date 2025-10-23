@@ -1,0 +1,52 @@
+return {
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+          library = {
+            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+          },
+        },
+      },
+    },
+    config = function()
+      -- Lua
+      vim.lsp.config["lua_ls"] = {
+        settings = {
+          Lua = {
+            diagnostics = { globals = { "vim" } },
+          },
+        },
+      }
+      vim.lsp.start(vim.lsp.config["lua_ls"])
+
+      -- TypeScript / JavaScript
+      vim.lsp.config["tsserver"] = {
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+        },
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+      }
+      vim.lsp.start(vim.lsp.config["tsserver"])
+
+      -- Rust
+      vim.lsp.config["rust_analyzer"] = {}
+      vim.lsp.start(vim.lsp.config["rust_analyzer"])
+
+      -- C / C++
+      vim.lsp.config["clangd"] = {
+        filetypes = { "c", "cpp", "objc", "objcpp" },
+      }
+      vim.lsp.start(vim.lsp.config["clangd"])
+    end,
+  },
+}
