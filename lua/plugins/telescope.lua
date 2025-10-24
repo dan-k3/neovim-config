@@ -26,7 +26,7 @@ return {
               ["<M-j>"] = actions.results_scrolling_down,
               ["<M-l>"] = actions.results_scrolling_right,
               ["<M-h>"] = actions.results_scrolling_left,
-              ["<C-c>"] = actions.delete_buffer,
+              ["<C-d>"] = actions.delete_buffer,
             },
             n = {
               ["<C-n>"] = actions.toggle_selection + actions.move_selection_better,
@@ -41,7 +41,7 @@ return {
               ["<M-j>"] = actions.results_scrolling_down,
               ["<M-l>"] = actions.results_scrolling_right,
               ["<M-h>"] = actions.results_scrolling_left,
-              ["<C-c>"] = actions.delete_buffer,
+              ["<C-d>"] = actions.delete_buffer,
             }
           },
           -- Add tag configuration
