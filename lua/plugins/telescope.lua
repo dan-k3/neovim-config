@@ -93,7 +93,7 @@ return {
       vim.keymap.set("n", "<leader>fM", require("telescope.builtin").man_pages, { desc = "Find man pages" })
       vim.keymap.set("n", "<leader>fC", require("telescope.builtin").colorscheme, { desc = "Find colorschemes" })
       vim.keymap.set("n", "<leader>fp", require("telescope.builtin").pickers, { desc = "Previous pickers" })
-      vim.keymap.set("n", "<leader>lp", require("telescope.builtin").resume, { desc = "Resume last picker" })
+      vim.keymap.set("n", "<leader>ll", require("telescope.builtin").resume, { desc = "Resume last picker" })
       vim.keymap.set("n", "<leader>fH", require("telescope.builtin").highlights, { desc = "Highlight groups" })
       vim.keymap.set("n", "<leader>fT", require("telescope.builtin").filetypes, { desc = "Filetypes" })
       vim.keymap.set("n", "<leader>fD", require("telescope.builtin").diagnostics, { desc = "Diagnostics" })

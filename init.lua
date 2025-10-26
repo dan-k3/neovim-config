@@ -1,5 +1,5 @@
 require("config.options")
-require("config.remap")
+require("config.key-remap")
 require("config.lazy")
 
 -- Netrw settings
@@ -22,7 +22,7 @@ vim.lsp.config('ts_ls', {
 })
 
 -- Enable Typescript Language Server
-vim.lsp.enable('ts_ls')
+--vim.lsp.enable('ts_ls')
 
 -- Set configuration for python language server
 vim.lsp.config('pyright', {
@@ -40,4 +40,4 @@ vim.lsp.config('csharp_ls', {
 })
 
 -- Enable C# Language Server
-vim.lsp.enable('csharp_ls')
+--vim.lsp.enable('csharp_ls')
