@@ -13,7 +13,7 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",     -- Lua
-        "tsserver",   -- TypeScript / JavaScript
+        --"tsserver",   -- TypeScript / JavaScript
         "pyright",    -- Python
         "csharp_ls",  -- C#
       },
@@ -27,9 +27,9 @@ return {
     opts = {
       ensure_installed = {
         "stylua",     -- Lua formatter
-        "prettier",   -- JS/TS formatter
-        "eslint_d",   -- JS/TS linter
-        "flake8",     -- Python linter
+        --"prettier",   -- JS/TS formatter
+        --"eslint_d",   -- JS/TS linter
+        --"flake8",     -- Python linter
       },
     },
   },
